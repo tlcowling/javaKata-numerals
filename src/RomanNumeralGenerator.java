@@ -1,4 +1,5 @@
-public class RomanNumeralsGenerator {
+public class RomanNumeralGenerator {
+
     public String romanNumeralRepresentationOf(int number) {
         String numeral = "";
 
@@ -34,13 +35,32 @@ public class RomanNumeralsGenerator {
             return "X";
         }
 
-        if(number > 10 && number <20){
+        if(number > 10 && number <14){
             String roman_base = "X";
             int arabic_base = 10;
             int isToAppend = number - arabic_base;
 
             numeral = appendRomanIs(roman_base, isToAppend);
         }
+
+        if(number == 14){
+            return "XIV";
+        }
+
+        if(number == 15){
+            return "XV";
+        }
+
+        if(number > 15 && number < 19){
+            String roman_base = "XV";
+            int arabic_base = 15;
+            int isToAppend = number-arabic_base;
+
+            numeral = appendRomanIs(roman_base, isToAppend);
+        }
+
+        if(number == 19){return "XIX";}
+        if(number == 20){return "XX";}
 
         return numeral;
     }
