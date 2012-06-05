@@ -3,73 +3,51 @@ public class RomanNumeralGenerator {
     public String romanNumeralRepresentationOf(int number) {
         String numeral = "";
 
-        if(number > 0 && number < 4){
-            String roman_base = "I";
-            int arabic_base = 1;
-            int isToAppend = number - arabic_base;
-
-            numeral = appendRomanIs(roman_base, isToAppend);
+        while(number >= 100){
+            numeral += "C";
+            number -= 100;
         }
 
-        if(number == 4){
-            return "IV";
+        while(number >= 90){
+            numeral += "XC";
+            number -= 90;
         }
 
-        if(number == 5){
-            return "V";
+        while(number >= 50){
+            numeral += "L";
+            number -= 50;
         }
 
-        if(number > 5 && number < 9){
-            String roman_base ="V";
-            int arabic_base = 5;
-            int isToAppend = number - arabic_base;
-
-            numeral = appendRomanIs(roman_base, isToAppend);
+        while(number >= 40){
+            numeral += "XL";
+            number -= 40;
         }
 
-        if(number == 9){
-            return "IX";
+        while(number >= 10){
+            numeral += "X";
+            number -= 10;
         }
 
-        if(number == 10){
-            return "X";
+        while(number >= 9){
+            numeral += "IX";
+            number -= 9;
         }
 
-        if(number > 10 && number <14){
-            String roman_base = "X";
-            int arabic_base = 10;
-            int isToAppend = number - arabic_base;
-
-            numeral = appendRomanIs(roman_base, isToAppend);
+        while(number >= 5){
+            numeral += "V";
+            number -= 5;
         }
 
-        if(number == 14){
-            return "XIV";
+        while(number >= 4){
+            numeral += "IV";
+            number -= 4;
         }
 
-        if(number == 15){
-            return "XV";
+        while(number >= 1){
+            numeral += "I";
+            number -= 1;
         }
-
-        if(number > 15 && number < 19){
-            String roman_base = "XV";
-            int arabic_base = 15;
-            int isToAppend = number-arabic_base;
-
-            numeral = appendRomanIs(roman_base, isToAppend);
-        }
-
-        if(number == 19){return "XIX";}
-        if(number == 20){return "XX";}
 
         return numeral;
-    }
-
-    private String appendRomanIs(String roman_base, int numberToAppend) {
-        for(int i = 0; i < numberToAppend; i++){
-            roman_base += "I";
-        }
-
-        return roman_base;
     }
 }

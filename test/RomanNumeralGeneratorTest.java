@@ -11,7 +11,7 @@ public class RomanNumeralGeneratorTest {
         assertThat(rn.romanNumeralRepresentationOf(1), equalTo("I"));
         assertThat(rn.romanNumeralRepresentationOf(2), equalTo("II"));
         assertThat(rn.romanNumeralRepresentationOf(3), equalTo("III"));
-        assertThat(rn.romanNumeralRepresentationOf(4),equalTo("IV"));
+        assertThat(rn.romanNumeralRepresentationOf(4), equalTo("IV"));
         assertThat(rn.romanNumeralRepresentationOf(5), equalTo("V"));
         assertThat(rn.romanNumeralRepresentationOf(6), equalTo("VI"));
         assertThat(rn.romanNumeralRepresentationOf(7), equalTo("VII"));
@@ -32,6 +32,20 @@ public class RomanNumeralGeneratorTest {
         assertThat(rn.romanNumeralRepresentationOf(17), equalTo("XVII"));
         assertThat(rn.romanNumeralRepresentationOf(18), equalTo("XVIII"));
         assertThat(rn.romanNumeralRepresentationOf(19), equalTo("XIX"));
+    }
+
+    @Test
+    public void shouldReturnCorrectNumeralsForSomeNumbersFrom20to100(){
+        RomanNumeralGenerator rn = new RomanNumeralGenerator();
+        assertThat(rn.romanNumeralRepresentationOf(20), equalTo("XX"));
+        assertThat(rn.romanNumeralRepresentationOf(24), equalTo("XXIV"));
+        assertThat(rn.romanNumeralRepresentationOf(40), equalTo("XL"));
+        assertThat(rn.romanNumeralRepresentationOf(46), equalTo("XLVI"));
+        assertThat(rn.romanNumeralRepresentationOf(49), equalTo("XLIX"));
+        assertThat(rn.romanNumeralRepresentationOf(50), equalTo("L"));
+        assertThat(rn.romanNumeralRepresentationOf(51), equalTo("LI"));
+        assertThat(rn.romanNumeralRepresentationOf(90), equalTo("XC"));
+        assertThat(rn.romanNumeralRepresentationOf(99), equalTo("XCIX"));
     }
 
     @Test
